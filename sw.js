@@ -1,22 +1,22 @@
-// sw.js - Service Worker para Marinelda Nails
+// sw.js - Service Worker para Karla's Nails
 
-const CACHE_NAME = 'marinelda-nails-v1';
+const CACHE_NAME = 'karlas-nails-v1';
 const urlsToCache = [
-  '/marinelda-nails/',
-  '/marinelda-nails/index.html',
-  '/marinelda-nails/admin.html',
-  '/marinelda-nails/admin-login.html',
-  '/marinelda-nails/setup-wizard.html',
-  '/marinelda-nails/editar-negocio.html',
-  '/marinelda-nails/manifest.json',
-  '/marinelda-nails/icons/icon-72x72.png',
-  '/marinelda-nails/icons/icon-96x96.png',
-  '/marinelda-nails/icons/icon-128x128.png',
-  '/marinelda-nails/icons/icon-144x144.png',
-  '/marinelda-nails/icons/icon-152x152.png',
-  '/marinelda-nails/icons/icon-192x192.png',
-  '/marinelda-nails/icons/icon-384x384.png',
-  '/marinelda-nails/icons/icon-512x512.png'
+  '/karlanails/',
+  '/karlanails/index.html',
+  '/karlanails/admin.html',
+  '/karlanails/admin-login.html',
+  '/karlanails/setup-wizard.html',
+  '/karlanails/editar-negocio.html',
+  '/karlanails/manifest.json',
+  '/karlanails/icons/icon-72x72.png',
+  '/karlanails/icons/icon-96x96.png',
+  '/karlanails/icons/icon-128x128.png',
+  '/karlanails/icons/icon-144x144.png',
+  '/karlanails/icons/icon-152x152.png',
+  '/karlanails/icons/icon-192x192.png',
+  '/karlanails/icons/icon-384x384.png',
+  '/karlanails/icons/icon-512x512.png'
 ];
 
 // ============================================
@@ -108,7 +108,7 @@ self.addEventListener('fetch', event => {
           }
           // Si no hay cache y es imagen, devolver icon por defecto
           if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
-            return caches.match('/marinelda-nails/icons/icon-192x192.png');
+            return caches.match('/karlanails/icons/icon-192x192.png');
           }
           return new Response('Error de red', { status: 408 });
         });
@@ -138,6 +138,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para Marinelda Nails');
+console.log('✅ Service Worker configurado para Karla\'s Nails');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);
